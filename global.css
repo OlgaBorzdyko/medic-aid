@@ -8,7 +8,6 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Syne', sans-serif;
   font-weight: 800;
   margin: 0;
   padding: 0;
@@ -23,49 +22,5 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  /*overflow: hidden !important;*/
   overflow-x: hidden;
-  background: linear-gradient(
-    0deg,
-    rgba(8, 25, 30, 1) 6%,
-    rgba(70, 62, 40, 1) 78%,
-    rgba(93, 76, 43, 1) 99%
-  );
-  /*background: linear-gradient(0deg, rgb(56, 63, 117) 6%, rgb(255, 114, 58) 78%, rgb(238, 46, 33) 99%);*/
-  /*background: linear-gradient(0deg, rgb(27, 1, 1) 6%, rgb(67, 2, 2) 78%, rgb(90, 5, 0) 99%);*/
-  background-attachment: fixed;
-}
-
-.bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  /*background-position: center center;*/
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: blur(70px);
-  transform: scale(2);
-  opacity: 0.6;
-  z-index: -9999;
-}
-
-.data-scroll-container {
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-
-.c-scrollbar {
-  opacity: 1;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  /*z-index: 9999;*/
-}
-
-.c-scrollbar_thumb {
-  background: #fbc65d !important;
-  opacity: 1;
-}
-
-.horizontal-section2 {
-  border: 2px solid red;
 }
