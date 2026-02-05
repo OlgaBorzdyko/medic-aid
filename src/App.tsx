@@ -1,14 +1,14 @@
-import { ThemeProvider } from '@mui/material'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
 
-import Main from './Main'
-import theme from './theme'
+import TopBar from './components/TopBar'
+import { theme } from './theme'
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <Main />
-      </div>
+      <CssBaseline />
+      <TopBar />
     </ThemeProvider>
   )
 }
