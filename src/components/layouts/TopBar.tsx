@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-import ThemeToggleButton from '../widgets/ThemeToggleButton'
+import ThemeToggleButton from '../../widgets/ThemeToggleButton'
 
 const TopBar = () => {
   return (

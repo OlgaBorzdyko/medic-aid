@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 
-import TopBar from './components/TopBar'
+import TopBar from './components/layouts/TopBar'
 import { theme } from './theme'
 
 const App = () => {
