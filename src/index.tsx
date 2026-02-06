@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(rootElement)
 
 if (import.meta.env.DEV) {
   const { worker } = await import('./mocks/browser')
-  worker.start()
+  worker.start({ serviceWorker: { url: '/mockServiceWorker.js' } })
 }
 
 root.render(
