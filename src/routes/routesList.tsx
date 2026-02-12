@@ -1,6 +1,7 @@
 import MainLayout from '../components/layouts/MainLayout'
 import DashboardPage from '../pages/DashboardPage'
 import LoginPage from '../pages/LoginPage'
+import RequireAuth from './RequireAuth'
 
 const routes = [
   {
@@ -8,12 +9,17 @@ const routes = [
     element: <LoginPage />
   },
   {
-    path: '/',
-    element: <MainLayout />,
+    element: <RequireAuth />,
     children: [
       {
-        index: true,
-        element: <DashboardPage />
+        path: '/',
+        element: <MainLayout />,
+        children: [
+          {
+            index: true,
+            element: <DashboardPage />
+          }
+        ]
       }
     ]
   }
