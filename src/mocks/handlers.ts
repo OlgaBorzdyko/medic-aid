@@ -1,8 +1,11 @@
 import { http, HttpResponse } from 'msw'
 
 const MOCK_USER = {
+  id: 1,
   login: 'admin',
-  password: '123456'
+  password: '123456',
+  name: 'John Doe',
+  avatar: '/doctor-example.png'
 }
 
 export const handlers = [
