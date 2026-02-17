@@ -28,7 +28,17 @@ export const handlers = [
       password: string
     }
     if (login === MOCK_USER.login && password === MOCK_USER.password) {
-      return HttpResponse.json({ success: true }, { status: 200 })
+      return HttpResponse.json(
+        {
+          success: true,
+          user: {
+            id: MOCK_USER.id,
+            name: MOCK_USER.name,
+            avatar: MOCK_USER.avatar
+          }
+        },
+        { status: 200 }
+      )
     }
     return HttpResponse.json(
       { message: 'Invalid login or password' },

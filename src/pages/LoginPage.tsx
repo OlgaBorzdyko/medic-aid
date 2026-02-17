@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import LoginForm from '../components/LoginForm'
 import { useLogin } from '../entities/login/hooks'
-import {session} from "../entities/login/session";
+import { session } from '../entities/login/session'
 
 const LoginPage = () => {
   const navigate = useNavigate()

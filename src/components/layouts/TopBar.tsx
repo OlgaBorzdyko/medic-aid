@@ -1,11 +1,15 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 import ThemeToggleButton from '../../widgets/ThemeToggleButton'
 
-const TopBar = () => {
+const TopBar = ({ user }) => {
   return (
     <Box>
-      <ThemeToggleButton />
+      <Box>
+        <ThemeToggleButton />
+        <Typography>{user.name}</Typography>
+        <img alt={user.name} src={user.avatar} />
+      </Box>
     </Box>
   )
 }
