@@ -8,7 +8,7 @@ const MainLayout = () => {
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
       <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        {/*<TopBar />*/}
+        <TopBar />
         <SideBar />
         <Box sx={{ p: 3, flexGrow: 1 }}>
           <Outlet />

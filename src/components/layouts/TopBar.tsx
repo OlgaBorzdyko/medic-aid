@@ -1,8 +1,10 @@
 import { Box, Typography } from '@mui/material'
 
+import { useAuthStore } from '../../store/authStore'
 import ThemeToggleButton from '../../widgets/ThemeToggleButton'
 
-const TopBar = ({ user }) => {
+const TopBar = () => {
+  const user = useAuthStore((state) => state.user)
   return (
     <Box>
       <Box>
