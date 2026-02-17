@@ -21,6 +21,7 @@ export const useAuthStore = create<AuthState>()(
       token: null,
 
       login: (user, token) => {
+        console.log('storage:', user, token)
         set({ user, token })
       },
       logout: () => {

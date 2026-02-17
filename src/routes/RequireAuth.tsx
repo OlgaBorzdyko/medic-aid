@@ -1,9 +1,9 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-import { session } from '../entities/login/session'
+import { useAuthStore } from '../store/authStore'
 
 const RequireAuth = () => {
-  const token = session.getToken()
+  const token = useAuthStore((state) => state.token)
 
   if (!token) {
     return <Navigate replace to="/login" />

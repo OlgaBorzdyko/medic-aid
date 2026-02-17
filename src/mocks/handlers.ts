@@ -31,6 +31,7 @@ export const handlers = [
       return HttpResponse.json(
         {
           success: true,
+          token: 'mock-example-token',
           user: {
             id: MOCK_USER.id,
             name: MOCK_USER.name,
