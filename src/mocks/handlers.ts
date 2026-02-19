@@ -5,7 +5,8 @@ const MOCK_USER = {
   login: 'admin',
   password: '123456',
   name: 'John Doe',
-  avatar: '/doctor-example.png'
+  avatar: '/doctor-example.png',
+  role: 'doctor'
 }
 
 export const handlers = [
@@ -35,7 +36,8 @@ export const handlers = [
           user: {
             id: MOCK_USER.id,
             name: MOCK_USER.name,
-            avatar: MOCK_USER.avatar
+            avatar: MOCK_USER.avatar,
+            role: MOCK_USER.role
           }
         },
         { status: 200 }
