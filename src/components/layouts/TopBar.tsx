@@ -17,7 +17,7 @@ const TopBar = () => {
         <ThemeToggleButton />
         <Typography>{user.name}</Typography>
         <Avatar alt={user.name} src={user.avatar} />
-          <Typography>{user.role}</Typography>
+        <Typography>{user.role}</Typography>
       </Box>
     </Box>
   )
