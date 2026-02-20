@@ -3,7 +3,8 @@ export const permissions = {
     canView: ['Dashboard', 'Patients', 'Appointments', 'Notes', 'Settings'],
     canEdit: ['Appointments', 'Notes', 'Settings']
   },
-  admin: {
-    test: ['255']
+  patient: {
+    canView: ['Dashboard', 'Appointments', 'Notes', 'Settings'],
+    canEdit: ['Notes', 'Settings']
   }
 }
