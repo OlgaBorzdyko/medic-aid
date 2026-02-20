@@ -1,13 +1,22 @@
 import { http, HttpResponse } from 'msw'
 
-const MOCK_USER = {
-  id: 1,
-  login: 'admin',
-  password: '123456',
-  name: 'John Doe',
-  avatar: '/doctor-example.png',
-  role: 'doctor'
-}
+const MOCK_USERS = [
+  {
+    id: 1,
+    login: 'doctor',
+    password: '123456',
+    name: 'John Doe',
+    avatar: '/doctor-example.png',
+    role: 'doctor'
+  },
+  {
+    id: 2,
+    login: 'patient',
+    password: '123456',
+    name: 'Jane Smith',
+    role: 'doctor'
+  }
+]
 
 export const handlers = [
   http.get('/doctors', () => {
@@ -28,16 +37,19 @@ export const handlers = [
       login: string
       password: string
     }
-    if (login === MOCK_USER.login && password === MOCK_USER.password) {
+    const user = MOCK_USERS.find(
+      (user) => user.login === login && user.password === password
+    )
+    if (user) {
       return HttpResponse.json(
         {
           success: true,
           token: 'mock-example-token',
           user: {
-            id: MOCK_USER.id,
-            name: MOCK_USER.name,
-            avatar: MOCK_USER.avatar,
-            role: MOCK_USER.role
+            id: user.id,
+            name: user.name,
+            avatar: user.avatar,
+            role: user.role
           }
         },
         { status: 200 }
