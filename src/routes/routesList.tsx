@@ -1,6 +1,6 @@
 import MainLayout from '../components/layouts/MainLayout'
 import AppointmentsPage from '../pages/AppointmentsPage'
-import DashboardPage from '../pages/DashboardPage'
+import DashboardPage from '../pages/dashboard/DashboardPage'
 import LoginPage from '../pages/LoginPage'
 import NotesPage from '../pages/NotesPage'
 import PatientsPage from '../pages/PatientsPage'

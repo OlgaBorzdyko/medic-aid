@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-import { useDoctors } from '../entities/doctors/hooks'
+import { useDoctors } from '../../entities/doctors/hooks'
 
 const DashboardPage = () => {
   const { data, isLoading, error } = useDoctors()
