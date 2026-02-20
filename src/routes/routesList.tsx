@@ -7,6 +7,7 @@ import PatientsPage from '../pages/PatientsPage'
 import SettingsPage from '../pages/SettingsPage'
 import UsersPage from '../pages/UsersPage'
 import RequireAuth from './RequireAuth'
+import RoleGuard from './RoleGuard'
 
 const routes = [
   {
@@ -24,10 +25,38 @@ const routes = [
             index: true,
             element: <DashboardPage />
           },
-          { path: 'patients', element: <PatientsPage /> },
-          { path: 'appointments', element: <AppointmentsPage /> },
-          { path: 'notes', element: <NotesPage /> },
-          { path: 'settings', element: <SettingsPage /> },
+          {
+            path: 'patients',
+            element: (
+              <RoleGuard allowedRoles={['doctor']}>
+                <PatientsPage />
+              </RoleGuard>
+            )
+          },
+          {
+            path: 'appointments',
+            element: (
+              <RoleGuard allowedRoles={['doctor', 'patient']}>
+                <AppointmentsPage />
+              </RoleGuard>
+            )
+          },
+          {
+            path: 'notes',
+            element: (
+              <RoleGuard allowedRoles={['doctor', 'patient']}>
+                <NotesPage />
+              </RoleGuard>
+            )
+          },
+          {
+            path: 'settings',
+            element: (
+              <RoleGuard allowedRoles={['doctor', 'patient']}>
+                <SettingsPage />
+              </RoleGuard>
+            )
+          },
           { path: 'users', element: <UsersPage /> }
         ]
       }
