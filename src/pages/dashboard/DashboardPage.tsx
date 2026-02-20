@@ -1,17 +1,16 @@
-import { Box } from '@mui/material'
-
-import { useDoctors } from '../../entities/doctors/hooks'
+import { useAuthStore } from '../../store/authStore'
+import DoctorDashboardPage from './DoctorDashboardPage'
+import PatientDashboardPage from './PatientDashboardPage'
 
 const DashboardPage = () => {
-  const { data, isLoading, error } = useDoctors()
-
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>Error</div>
-
-  return (
-    <Box>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </Box>
-  )
+  const role = useAuthStore((state) => state.user.role)
+  switch (role) {
+    case 'doctor':
+      return <DoctorDashboardPage />
+    case 'patient':
+      return <PatientDashboardPage />
+    default:
+      return null
+  }
 }
 export default DashboardPage
