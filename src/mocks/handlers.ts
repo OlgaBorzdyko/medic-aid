@@ -14,7 +14,7 @@ const MOCK_USERS = [
     login: 'patient',
     password: '123456',
     name: 'Jane Smith',
-    role: 'doctor'
+    role: 'patient'
   }
 ]
 
