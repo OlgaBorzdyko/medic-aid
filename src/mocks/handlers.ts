@@ -1,5 +1,9 @@
 import { http, HttpResponse } from 'msw'
 
+import { getQueryParams } from './hooks/getQueryParams'
+import { withAuth } from './hooks/useAuthWrapper'
+import { appointments } from './mock-data/appointments'
+
 const MOCK_USERS = [
   {
     id: 1,
@@ -25,9 +29,23 @@ export const handlers = [
       name: 'John Doe'
     })
   }),
-  http.get('/appointments', () => {
-    return HttpResponse.json({})
-  }),
+  http.get(
+    '/appointments',
+    withAuth(({ request, role, userId }) => {
+      const { limit, offset, status } = getQueryParams(request)
+      let data = appointments.filter((appointment) =>
+        role === 'doctor'
+          ? appointment.doctorId === userId
+          : appointment.patientId === userId
+      )
+      if (status) data = data.filter((a) => a.status === status)
+      data = data.sort(
+        (a, b) =>
+          new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
+      )
+      return HttpResponse.json(data.slice(offset, offset + limit))
+    })
+  ),
   http.get('/patients', () => {
     return HttpResponse.json({})
   }),
