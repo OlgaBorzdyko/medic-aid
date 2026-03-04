@@ -6,7 +6,7 @@ import { appointments } from './mock-data/appointments'
 
 const MOCK_USERS = [
   {
-    id: 1,
+    id: 'd1',
     login: 'doctor',
     password: '123456',
     name: 'John Doe',
@@ -14,7 +14,7 @@ const MOCK_USERS = [
     role: 'doctor'
   },
   {
-    id: 2,
+    id: 'p1',
     login: 'patient',
     password: '123456',
     name: 'Jane Smith',
