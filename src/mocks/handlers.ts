@@ -14,7 +14,22 @@ const MOCK_USERS = [
     role: 'doctor'
   },
   {
+    id: 'd2',
+    login: 'doctor',
+    password: '123456',
+    name: 'Alice Smith',
+    avatar: '/doctor-example.png',
+    role: 'doctor'
+  },
+  {
     id: 'p1',
+    login: 'patient',
+    password: '123456',
+    name: 'Anna Brown',
+    role: 'patient'
+  },
+  {
+    id: 'p2',
     login: 'patient',
     password: '123456',
     name: 'Jane Smith',

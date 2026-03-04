@@ -2,7 +2,7 @@ export const appointments = [
   {
     id: 'a1',
     doctorId: 'd1',
-    doctorName: 'Dr. Alice Smith',
+    doctorName: 'John Doe',
     patientId: 'p1',
     patientName: 'Anna Brown',
     datetime: '2026-02-24T09:30:00',
@@ -12,9 +12,9 @@ export const appointments = [
   {
     id: 'a2',
     doctorId: 'd2',
-    doctorName: 'Dr. Bob Johnson',
+    doctorName: 'Dr. Alice Smith',
     patientId: 'p2',
-    patientName: 'John Doe',
+    patientName: 'Jane Smith',
     datetime: '2026-02-24T11:00:00',
     status: 'scheduled',
     notes: 'Follow-up blood work'
@@ -32,7 +32,7 @@ export const appointments = [
   {
     id: 'a4',
     doctorId: 'd1',
-    doctorName: 'Dr. Alice Smith',
+    doctorName: 'John Doe',
     patientId: 'p4',
     patientName: 'David Kim',
     datetime: '2026-02-25T10:00:00',
@@ -42,7 +42,7 @@ export const appointments = [
   {
     id: 'a5',
     doctorId: 'd2',
-    doctorName: 'Dr. Bob Johnson',
+    doctorName: 'Dr. Alice Smith',
     patientId: 'p5',
     patientName: 'Emily Clark',
     datetime: '2026-02-26T15:00:00',
@@ -62,7 +62,7 @@ export const appointments = [
   {
     id: 'a7',
     doctorId: 'd1',
-    doctorName: 'Dr. Alice Smith',
+    doctorName: 'John Doe',
     patientId: 'p7',
     patientName: 'Sofia Gonzalez',
     datetime: '2026-03-01T14:00:00',
@@ -72,7 +72,7 @@ export const appointments = [
   {
     id: 'a8',
     doctorId: 'd2',
-    doctorName: 'Dr. Bob Johnson',
+    doctorName: 'Dr. Alice Smith',
     patientId: 'p8',
     patientName: 'Liam Smith',
     datetime: '2026-03-05T11:30:00',
@@ -92,7 +92,7 @@ export const appointments = [
   {
     id: 'a10',
     doctorId: 'd1',
-    doctorName: 'Dr. Alice Smith',
+    doctorName: 'John Doe',
     patientId: 'p10',
     patientName: 'Tom Hardy',
     datetime: '2026-03-15T09:00:00',
@@ -102,7 +102,7 @@ export const appointments = [
   {
     id: 'a11',
     doctorId: 'd2',
-    doctorName: 'Dr. Bob Johnson',
+    doctorName: 'Dr. Alice Smith',
     patientId: 'p11',
     patientName: 'Linda Nguyen',
     datetime: '2026-03-20T14:30:00',
