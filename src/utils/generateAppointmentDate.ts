@@ -9,5 +9,9 @@ export const generateAppointmentDate = (appointments) => {
       date.setDate(date.getDate() + index)
       date.setHours(9 + index)
     }
+    return {
+      ...appointment,
+      datetime: date.toISOString()
+    }
   })
 }

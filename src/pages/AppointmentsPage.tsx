@@ -10,14 +10,14 @@ const AppointmentsPage = () => {
   console.log('data:', data)
   console.log('loading:', isLoading)
   console.log('error:', error)
-  const test = generateAppointmentDate(appointments)
-  console.log(test)
+  const liveAppointments = generateAppointmentDate(appointments)
+  console.log(liveAppointments)
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error</div>
   return (
     <div>
-      {data?.map((appointment) => (
+      {liveAppointments?.map((appointment) => (
         <div key={appointment.id}>
           <div>{appointment.datetime}</div>
 
