@@ -1,5 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
+import { generateAppointmentDate } from '../utils/generateAppointmentDate'
 import { getQueryParams } from './hooks/getQueryParams'
 import { withAuth } from './hooks/useAuthWrapper'
 import { appointments } from './mock-data/appointments'
@@ -59,6 +60,24 @@ export const handlers = [
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       )
       return HttpResponse.json(data.slice(offset, offset + limit))
+    })
+  ),
+  http.get(
+    '/appointments/next',
+    withAuth(({ userId, role }) => {
+      const liveAppointments = generateAppointmentDate(appointments)
+      const userAppointments = liveAppointments.filter((a) =>
+        role === 'doctor' ? a.doctorId === userId : a.patientId === userId
+      )
+      const now = Date.now()
+      const upcoming = userAppointments
+        .filter((a) => new Date(a.datetime).getTime() > now)
+        .sort(
+          (a, b) =>
+            new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
+        )
+
+      return HttpResponse.json(upcoming[0] || null)
     })
   ),
   http.get('/patients', () => {

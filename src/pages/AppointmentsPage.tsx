@@ -1,7 +1,5 @@
 import { useAppointments } from '../entities/appointments/all/hooks'
-import { appointments } from '../mocks/mock-data/appointments'
 import { useAuthStore } from '../store/authStore'
-import { generateAppointmentDate } from '../utils/generateAppointmentDate'
 
 const AppointmentsPage = () => {
   const { data, isLoading, error } = useAppointments()
@@ -10,14 +8,12 @@ const AppointmentsPage = () => {
   console.log('data:', data)
   console.log('loading:', isLoading)
   console.log('error:', error)
-  const liveAppointments = generateAppointmentDate(appointments)
-  console.log(liveAppointments)
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error</div>
   return (
     <div>
-      {liveAppointments?.map((appointment) => (
+      {data?.map((appointment) => (
         <div key={appointment.id}>
           <div>{appointment.datetime}</div>
 
