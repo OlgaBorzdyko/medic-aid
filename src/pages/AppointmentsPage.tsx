@@ -1,7 +1,7 @@
-import { useAppointments } from '../entities/appointments/hooks'
+import { useAppointments } from '../entities/appointments/all/hooks'
+import { appointments } from '../mocks/mock-data/appointments'
 import { useAuthStore } from '../store/authStore'
-import {generateAppointmentDate} from "../utils/generateAppointmentDate";
-import {appointments} from "../mocks/mock-data/appointments";
+import { generateAppointmentDate } from '../utils/generateAppointmentDate'
 
 const AppointmentsPage = () => {
   const { data, isLoading, error } = useAppointments()
