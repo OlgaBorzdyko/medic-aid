@@ -1,3 +1,4 @@
+import { NextPatient } from '../../components/dashboard/NextPatient'
 import { useNextAppointment } from '../../entities/appointments/next/hooks'
 
 const DoctorDashboardPage = () => {
@@ -8,7 +9,7 @@ const DoctorDashboardPage = () => {
   return (
     <>
       <div>DoctorDashboardPage</div>
-      <div>{nextAppointment.patientName}</div>
+      <NextPatient patient={nextAppointment} />
     </>
   )
 }
